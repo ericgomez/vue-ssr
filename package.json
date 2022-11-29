@@ -9,10 +9,18 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "axios": "^0.21.1",
     "@quasar/extras": "^1.0.0",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "bookshelf": "^1.2.0",
     "core-js": "^3.6.5",
-    "quasar": "^1.0.0"
+    "dotenv": "^16.0.3",
+    "express-session": "^1.17.3",
+    "knex": "^2.3.0",
+    "mysql": "^2.18.1",
+    "quasar": "^1.0.0",
+    "vuelidate": "^0.7.7"
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0"
