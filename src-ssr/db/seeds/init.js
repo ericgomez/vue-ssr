@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const saltRounds = require('./../../app/config').saltRounds;
 
 /**
  * @param { import("knex").Knex } knex
@@ -9,7 +10,7 @@ exports.seed = async function (knex) {
 
   // table users
   await knex('users').del();  // Deletes ALL existing entries of table users
-  const password = await bcrypt.hash('secret', 10);
+  const password = await bcrypt.hash('secret', saltRounds);
   await knex('users').insert([
     { name: 'admin', email: 'admin@m.com', password }
   ]);
