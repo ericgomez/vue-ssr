@@ -21,5 +21,26 @@
 <script>
   export default {
     name: 'LoggedLayout',
+    methods: {
+      logout () {
+        // execute action with dispatch
+        this.$store.dispatch('auth/logout').then(res => {
+          // execute mutation with commit
+          this.$store.commit('auth/setUser',
+            { user: {id: null, email: null, name: null}, logged: false },
+            { root: true }
+          );
+
+          // notify is plugin of quasar to messages
+          this.$q.notify({
+            message: res.data.message,
+            position: 'bottom',
+            color: 'orange'
+          });
+
+          this.$router.push({ name: 'Login' });
+        });
+      }
+    }
   }
 </script>
