@@ -13,11 +13,4 @@ const knex = require('knex')({
   },
 });
 
-const bookshelf = require('bookshelf')(knex); // in bookshelf add knex configuration
-
-// const User = bookshelf.model('User', {
-//   tableName: 'users',
-//   posts() {
-//     return this.hasMany(Posts);
-//   }
-// });
+module.exports = require('bookshelf')(knex); // add in bookshelf the knex configuration
