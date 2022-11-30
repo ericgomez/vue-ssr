@@ -13,6 +13,12 @@ const routes = [
         name: 'Login',
         component: () => import('pages/Auth/Login.vue'),
         meta: { title: 'Iniciar sesión' }
+      },
+      {
+        path: 'register',
+        name: 'Register',
+        component: () => import('pages/Auth/Register.vue'),
+        meta: { title: 'Regístrate' }
       }
     ]
   },
