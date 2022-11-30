@@ -4,7 +4,16 @@ const routes = [
     path: '/',
     component: () => import('layouts/GuestLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue'), meta: { title: 'Index' } }
+      {
+        path: '/',
+        redirect: '/login'
+      },
+      {
+        path: 'login',
+        name: 'Login',
+        component: () => import('pages/Auth/Login.vue'),
+        meta: { title: 'Iniciar sesión' }
+      }
     ]
   },
 

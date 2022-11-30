@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   saltRounds: 10,
   dbConnection: {

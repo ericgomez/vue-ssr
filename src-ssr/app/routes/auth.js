@@ -31,20 +31,12 @@ module.exports = (app) => {
       })
         .status(400);
     } catch (e) {
-      if (e.message === 'EmptyResponse') {
+      if (e.message === "EmptyResponse") {
         return res.json({
-          res: 'ok',
-          message: 'No existe un usuario con este correo electrónico'
-        })
-          .status(200);
+          res: 'ok', message: 'No existe un usuario con este correo electrónico'
+        }).status(200);
       }
-
-      return res.json({
-        res: 'ok',
-        message: 'Error',
-        trace: e.message
-      })
-        .status(e.code);
+      return res.json({ res: 'ok', message: 'Error', trace: e.message }).status(e.code);
     }
   });
 

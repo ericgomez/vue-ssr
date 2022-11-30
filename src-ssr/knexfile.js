@@ -1,4 +1,3 @@
-require('dotenv').config({ path: './../.env' });
 const dbConnection = require('./app/config').dbConnection;
 
 module.exports = {
