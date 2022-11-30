@@ -15,12 +15,12 @@ npm install vuelidate bookshelf dotenv express-session knex mysql bcrypt body-pa
 
 ### Start mode SSR Quasar
 ```bash
-quasar mode add ssr
+npx quasar mode add ssr
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
-quasar dev
+npx quasar dev
 ```
 
 
