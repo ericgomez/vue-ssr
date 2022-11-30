@@ -11,11 +11,23 @@
  * development server, but such updates are costly since the dev-server needs a reboot.
  */
 
-module.exports.extendApp = function ({ app, ssr }) {
-  /*
-     Extend the parts of the express app that you
-     want to use with development server too.
+const session = require('express-session');
+const bodyParser = require('body-parser');
 
-     Example: app.use(), app.get() etc
-  */
-}
+module.exports.extendApp = function ({ app, ssr }) {
+  app.use(session({
+    secret: 'new-key-secret',
+    name: 'quasar-ssr-cookie',
+    resave: true,
+    saveUninitialized: true
+  }));
+
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({
+    extended: false,
+  }));
+
+  require('./app/routes/auth')(app);
+  require('./app/routes/blog')(app);
+  require('./app/routes/profile')(app);
+};
