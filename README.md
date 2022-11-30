@@ -22,6 +22,25 @@ npx quasar mode add ssr
 In the folder src-ssr execute:
 ```bash
 npx quasar dev
+npx quasar dev -m ssr
+```
+
+The "error:0308010C:digital envelope routines::unsupported" occurs because Node.js v17 and later use OpenSSL v3.0 which has had breaking changes. To resolve the error, set the NODE_OPTIONS environment variable to --openssl-legacy-provider when running your development server.
+
+#### 👇️ for macOS, Linux or Windows Git Bash
+```bash
+export NODE_OPTIONS=--openssl-legacy-provider
+```
+
+#### 👇️ for Windows PowerShell
+```bash
+$env:NODE_OPTIONS="--openssl-legacy-provider"
+```
+
+### Add Plugin in Quasar boot (npx quasar new boot)
+Add [plugin-name] in quasar.config.js
+```bash
+npx quasar new boot [plugin-name]
 ```
 
 ### Create migrations with KNEX (npx knex <command> [migration-name])

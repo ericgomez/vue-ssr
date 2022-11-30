@@ -14,7 +14,7 @@ Vue.use(Vuex);
  * with the Store instance.
  */
 
-export default function (/* { ssrContext } */) {
+export default function ({ ssrContext }) {
   const Store = new Vuex.Store({
     state: {
       user: {}
@@ -27,6 +27,10 @@ export default function (/* { ssrContext } */) {
     // for dev mode only
     strict: process.env.DEBUGGING
   });
+
+  if (ssrContext) {
+    console.log('Content SSR');
+  }
 
   return Store;
 }
