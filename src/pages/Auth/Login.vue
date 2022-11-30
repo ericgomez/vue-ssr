@@ -52,6 +52,15 @@ export default {
       }
     }
   },
+  meta () {
+    return {
+      title: "Iniciar sesión",
+      meta: [
+        { name: "description", content: "Descripción del inicio de sesión" },
+        { name: "keywords", content: "login, iniciar sesión" }
+      ]
+    }
+  },
   validations: {
     user: {
       email: { required, email },

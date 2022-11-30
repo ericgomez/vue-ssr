@@ -68,6 +68,13 @@
         }
       }
     },
+    meta: {
+      title: 'Regístrate',
+      meta: {
+        description: { name: 'description', content: 'Página para registrarse en la plataforma'},
+        keywords: { name: 'keywords', content: 'aplicación ssr quasar'},
+      }
+    },
     validations: {
       signUp: {
         email: { required, email },
