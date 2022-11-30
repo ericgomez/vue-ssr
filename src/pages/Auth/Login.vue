@@ -41,9 +41,15 @@
 <script>
 import { required, email } from 'vuelidate/lib/validators'
 import { mapActions, mapMutations } from 'vuex'
+import {protect} from "../../utils/auth";
 
 export default {
   name: 'LoginPage',
+  preFetch({store, redirect}) {
+    console.log("LOGIN PAGE PREFETCH");
+    // in preFetch perdemos el contexto de this
+    protect(redirect, store.state.auth.logged, '/blog/profile');
+  },
   data () {
     return {
       user: {

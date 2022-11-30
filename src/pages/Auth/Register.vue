@@ -56,9 +56,15 @@
 <script>
   import { required, email, minLength } from 'vuelidate/lib/validators'
   import { mapActions } from 'vuex'
+  import {protect} from "../../utils/auth";
 
   export default {
     name: 'RegisterPage',
+    preFetch ({store, redirect}) {
+      console.log('REGISTER PAGE');
+      // in preFetch perdemos el contexto de this
+      protect(redirect, store.state.auth.logged, '/blog/profile');
+    },
     data () {
       return {
         signUp: {
