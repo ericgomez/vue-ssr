@@ -23,10 +23,19 @@ npx quasar mode add ssr
 npx quasar dev
 ```
 
+### Create migrations with KNEX (npx knex <command> [migration-name])
+```bash
+npx knex migrate:make [migration-name]
+```
+
+### Run migrations with KNEX (npx knex <command> [migration-name])
+```bash
+npx knex migrate:latest [migration-name]
+```
 
 ### Build the app for production
 ```bash
-quasar build
+npx quasar build
 ```
 
 ### Customize the configuration
