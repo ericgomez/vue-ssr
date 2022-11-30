@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-
-// import example from './module-example'
+import auth from './auth';
 
 Vue.use(Vuex);
 
@@ -16,11 +15,8 @@ Vue.use(Vuex);
 
 export default function ({ ssrContext }) {
   const Store = new Vuex.Store({
-    state: {
-      user: {}
-    },
     modules: {
-      // example
+      auth
     },
 
     // enable strict mode (adds overhead!)
@@ -30,6 +26,12 @@ export default function ({ ssrContext }) {
 
   if (ssrContext) {
     console.log('Content SSR');
+    // execute mutation
+    console.log(ssrContext.req.session);
+    Store.commit('auth/setUser', {
+      user: ssrContext.req.session,
+      logged: ssrContext.req.session.logged
+    });
   }
 
   return Store;

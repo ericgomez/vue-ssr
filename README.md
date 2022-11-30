@@ -37,10 +37,15 @@ export NODE_OPTIONS=--openssl-legacy-provider
 $env:NODE_OPTIONS="--openssl-legacy-provider"
 ```
 
-### Add Plugin in Quasar boot (npx quasar new boot)
+### Add Plugin in Quasar boot (npx quasar new boot [plugin-name])
 Add [plugin-name] in quasar.config.js
 ```bash
 npx quasar new boot [plugin-name]
+```
+
+### Add new store module in Quasar (npx quasar new store [store-module-name])
+```bash
+npx quasar new store [store-module-name]
 ```
 
 ### Create migrations with KNEX (npx knex <command> [migration-name])
