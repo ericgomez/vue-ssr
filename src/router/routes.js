@@ -2,9 +2,9 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    component: () => import('layouts/GuestLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: '', component: () => import('pages/Index.vue'), meta: { title: 'Index' } }
     ]
   },
 
@@ -14,6 +14,6 @@ const routes = [
     path: '*',
     component: () => import('pages/Error404.vue')
   }
-]
+];
 
-export default routes
+export default routes;

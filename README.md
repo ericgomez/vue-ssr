@@ -48,6 +48,11 @@ npx quasar new boot [plugin-name]
 npx quasar new store [store-module-name]
 ```
 
+### Add new layout in Quasar (npx quasar new layout [layout-name])
+```bash
+npx quasar new layout [layout-name]
+```
+
 ### Create migrations with KNEX (npx knex <command> [migration-name])
 In the folder src-ssr execute:
 ```bash
