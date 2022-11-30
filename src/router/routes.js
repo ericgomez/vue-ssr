@@ -22,6 +22,18 @@ const routes = [
       }
     ]
   },
+  {
+    path: '/blog',
+    component: () => import('layouts/LoggedLayout.vue'),
+    children: [
+      {
+        path: 'profile',
+        name: 'Profile',
+        component: () => import('pages/Profile.vue'),
+        meta: { title: 'Tu perfil' }
+      },
+    ]
+  },
 
   // Always leave this as last one,
   // but you can also remove it

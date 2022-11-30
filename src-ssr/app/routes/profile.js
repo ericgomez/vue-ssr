@@ -5,7 +5,7 @@ const saltRounds = require('./../config').saltRounds;
 // app extended of index.js in src-ssr
 // app contain modelude of express
 module.exports = (app) => {
-  app.patch('/api/profile/updates', async (req, res) => {
+  app.patch('/api/profile/update', async (req, res) => {
     // function fetch is method of bookshelf
     const user = await new User({ 'id': req.session.userID }).fetch();
 
