@@ -32,6 +32,12 @@ const routes = [
         component: () => import('pages/Profile.vue'),
         meta: { title: 'Tu perfil' }
       },
+      {
+        path: 'posts',
+        name: 'Posts',
+        component: () => import('pages/Blog/PostList.vue'),
+        meta: { title: 'Blog' }
+      },
     ]
   },
 
