@@ -58,6 +58,11 @@ npx quasar new layout [layout-name]
 npx quasar new page [directory]/[page-name]
 ```
 
+### Add new component in Quasar (npx quasar new component [directory]/[component-name])
+```bash
+npx quasar new component [directory]/[component-name]
+```
+
 ### Create migrations with KNEX (npx knex <command> [migration-name])
 In the folder src-ssr execute:
 ```bash
