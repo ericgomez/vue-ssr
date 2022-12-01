@@ -58,7 +58,7 @@ module.exports = (app) => {
         tags: tags.toJSON()
       })
         .status(200);
-    } catch (error) {
+    } catch (e) {
       return res.json({
         res: 'ok',
         message: 'Error',
@@ -86,7 +86,7 @@ module.exports = (app) => {
         message: 'El post ha sido creado correctamente'
       })
         .status(200);
-    } catch (error) {
+    } catch (e) {
       return res.json({
         res: 'ok',
         message: 'Error',
@@ -110,7 +110,7 @@ module.exports = (app) => {
           })
             .status(200);
         });
-    } catch (error) {
+    } catch (e) {
       return res.json({
         res: 'ok',
         message: 'Error',

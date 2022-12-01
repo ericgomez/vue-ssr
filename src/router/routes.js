@@ -39,11 +39,17 @@ const routes = [
         meta: { title: 'Blog' }
       },
       {
-        path: 'post/id',
+        path: 'post/:id',
         name: 'PostDetail',
         component: () => import('pages/Blog/Post.vue'),
         meta: { title: 'Detalle del post' }
       },
+      {
+        path: 'create-post',
+        name: 'PostCreate',
+        component: () => import('pages/Blog/PostCreate.vue'),
+        meta: { title: 'Alta de un nuevo post' }
+      }
     ]
   },
 

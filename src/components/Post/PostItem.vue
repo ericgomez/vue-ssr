@@ -49,8 +49,8 @@
 </template>
 
 <script>
-  import PostTags from './PostTags';
-  import PostCategory from './PostCategory';
+  import PostTags from './PostTags.vue';
+  import PostCategory from './PostCategory.vue';
   export default {
     name: 'PostItem',
     components: {

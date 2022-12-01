@@ -54,7 +54,7 @@ export default {
   name: 'ProfilePage',
   preFetch ({store, redirect}) {
     console.log('PROFILE PAGE');
-    protect(redirect, !store.state.auth.logged, '/login');
+    // protect(redirect, !store.state.auth.logged, '/login');
   },
   meta: {
     title: 'Perfil de usuario'

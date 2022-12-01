@@ -1,41 +1,35 @@
-// importamos el modulo pero el que hemos definido con la configuration de knex
-const bookshelf = require('./bookshelf');
+const bookshelf = require("./bookshelf");
+const Models = {};
 
-// Registering already defined models
-const User = bookshelf.Model.extend({
-  tableName: 'users',
-  posts() {
-    return this.belongsTo(Post);
+Models.User = bookshelf.Model.extend({
+  tableName: "users",
+  posts: function () {
+    return this.belongsTo(Models.Post);
   }
 });
 
-const Post = bookshelf.Model.extend({
-  tableName: 'posts',
-  tags() {
-    return this.belongsToMany(Tag);
+Models.Post = bookshelf.Model.extend({
+  tableName: "posts",
+  tags: function () {
+    return this.belongsToMany(Models.Tag);
   },
-  category() {
-    return this.belongsTo(Category);
+  category: function () {
+    return this.belongsTo(Models.Category);
   },
-  owner() {
-    return this.belongsTo(User);
+  owner: function () {
+    return this.belongsTo(Models.User);
   }
 });
 
-const Tag = bookshelf.Model.extend({
-  tableName: 'tags',
-  posts() {
-    return this.belongsToMany(Post);
+Models.Tag = bookshelf.Model.extend({
+  tableName: "tags",
+  posts: function () {
+    return this.belongsToMany(Models.Post);
   }
 });
 
-const Category = bookshelf.Model.extend({
-  tableName: 'category'
+Models.Category = bookshelf.Model.extend({
+  tableName: "categories"
 });
 
-module.exports = {
-  User,
-  Post,
-  Tag,
-  Category
-};
+module.exports = Models;

@@ -6,7 +6,7 @@
 
 <script>
 import { mapState } from 'vuex';
-import PostItem from '../../components/Post/PostItem';
+import PostItem from '../../components/Post/PostItem.vue';
 import { protect } from '../../utils/auth';
 
 export default {
