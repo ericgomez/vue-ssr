@@ -7,9 +7,22 @@ const Tag = require('./../models').Tag;
 module.exports = (app) => {
   app.get('/api/blog/posts', (req, res) => {
     // function fetchAll is method of bookshelf
-    Post.fetchAll({ require: true, withRelated: ['category', 'tags', 'owner'] })
-      .then(post => {
-        return res.json(post.toJSON()).status(200);
+    Post.fetchAll({
+      require: true,
+      withRelated: [{
+        owner: function (qb) {
+          qb.column("id", "name");
+        },
+        category: function (qb) {
+          qb.column("id", "name");
+        },
+        tags: function (qb) {
+          qb.column("id", "name");
+        },
+      }]
+    })
+      .then(posts => {
+        return res.json(posts.toJSON()).status(200);
       })
       .catch(e => {
         if (e.message === 'EmptyResponse') {

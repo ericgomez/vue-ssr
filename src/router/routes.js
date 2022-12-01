@@ -38,6 +38,12 @@ const routes = [
         component: () => import('pages/Blog/PostList.vue'),
         meta: { title: 'Blog' }
       },
+      {
+        path: 'post/id',
+        name: 'PostDetail',
+        component: () => import('pages/Blog/Post.vue'),
+        meta: { title: 'Detalle del post' }
+      },
     ]
   },
 
